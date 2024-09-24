@@ -30,6 +30,7 @@ function dono(d_id){
     donations[d_id-1] -= -money
     document.getElementById("balance").innerHTML = coin
     document.getElementById(a_id).innerHTML = donations[d_id-1] + " BDT"
+    my_modal_5.showModal()
 
     // create card
     const card_text = ["Flood Relief in Noakhali","Flood Relief in Feni","Aid for Injured in the Quota Movement"]
