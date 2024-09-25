@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,120 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <title>My Blog</title>
 </head>
+
 <body class="mx-auto my-0">
-    <header class="p-10">
-        <a href="index.html">
-        <button class="btn btn-primary">Home</button></a>
+    <header class="sticky top-0 z-50">
+        <nav class="flex justify-between align-center bg-gray-900 p-8">
+            <a href="index.html">
+                <button class="btn btn-primary">Home</button></a>
+            <div class="flex gap-4 items-center">
+                <img src="assets/logo.png" alt="">
+                <p>Donate Bangladesh</p>
+            </div>
+            <div class="flex gap-3 items-center bg-slate-700 w-fit py-2 px-4 rounded-3xl">
+                <img src="assets/coin.png" alt="">
+                <p id="balance">5000</p>
+                <p>BDT</p>
+            </div>
+        </nav>
     </header>
     <main>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">
+                What is the Document Object Model (DOM)?
+            </div>
+            <div class="collapse-content">
+                <p>
+                    The <strong>Document Object Model (DOM)</strong> is like a map or structure of an HTML page that the
+                    browser uses to understand the content on the page. It represents the entire web page as a tree with
+                    branches, where each part of the HTML (like headings, paragraphs, buttons, etc.) is considered an
+                    element (or node) on this tree.
+                </p>
+                <p>
+                    When you load a webpage, the browser creates a <strong>DOM</strong> so you can use JavaScript to
+                    interact with the page by changing, adding, or removing content.
+                </p>
+                <p><strong>Example:</strong> The DOM lets JavaScript find a button and make it clickable, change its
+                    color, or even remove it.</p>
+            </div>
+        </div>
+
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                How do you select an element from the DOM?
+            </div>
+            <div class="collapse-content">
+                <p>
+                    You can select an element from the DOM using JavaScript by referencing its <strong>tag</strong>,
+                    <strong>class</strong>, <strong>ID</strong>, or <strong>attribute</strong>. Common methods include:
+                </p>
+                <ul>
+                    <li><code>document.getElementById("elementID")</code> - Selects an element by its ID.</li>
+                    <li><code>document.querySelector(".className")</code> - Selects the first element that matches a
+                        class, ID, or tag.</li>
+                    <li><code>document.getElementsByClassName("className")</code> - Selects all elements with a specific
+                        class name.</li>
+                </ul>
+                <p><strong>Example:</strong> To select a button with the ID "myButton":</p>
+                <pre><code>const button = document.getElementById("myButton");</code></pre>
+            </div>
+        </div>
+
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                What is event delegation in the context of the DOM, and why is it useful?
+            </div>
+            <div class="collapse-content">
+                <p>
+                    <strong>Event delegation</strong> is a way to manage events (like clicks) on elements by adding
+                    <strong>one event listener</strong> to a common parent element instead of each child element
+                    individually. It works by taking advantage of event bubbling, where events on child elements "bubble
+                    up" to parent elements.
+                </p>
+                <p><strong>Why is it useful?</strong></p>
+                <ul>
+                    <li>Efficiency: You don’t need to add separate listeners to each element.</li>
+                    <li>Handles dynamic elements: It works even if new elements are added to the page later.</li>
+                </ul>
+                <p><strong>Example:</strong> A list with event delegation on the parent:</p>
+                <pre><code>
+        document.getElementById("parentList").addEventListener("click", function(event) {
+            if(event.target.tagName === "LI") {
+                alert("You clicked on item: " + event.target.textContent);
+            }
+        });
+                </code></pre>
+            </div>
+        </div>
+
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                How do you manipulate an element's attributes and styles using the DOM?
+            </div>
+            <div class="collapse-content">
+                <p>You can modify an element’s attributes and styles using JavaScript:</p>
+                <p><strong>To change attributes:</strong> Use <code>setAttribute</code> or modify properties directly.
+                </p>
+                <pre><code>
+        const image = document.getElementById("myImage");
+        image.setAttribute("src", "newImage.jpg");
+        // or
+        image.src = "newImage.jpg";
+                </code></pre>
+                <p><strong>To change styles:</strong> Use the <code>style</code> property:</p>
+                <pre><code>
+        const button = document.getElementById("myButton");
+        button.style.backgroundColor = "blue";
+        button.style.fontSize = "20px";
+                </code></pre>
+            </div>
+        </div>
 
     </main>
 </body>
+
 </html>
