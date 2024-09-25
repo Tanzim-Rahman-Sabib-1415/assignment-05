@@ -48,12 +48,12 @@ function dono(d_id){
 function toogle_history(){
     document.getElementById("donation").classList.add("hidden")
     document.getElementById("history").classList.remove("hidden")
-    document.getElementById("btn-history").classList.remove("bg-indigo-200")
-    document.getElementById("btn-donation").classList.add("bg-indigo-200")
+    document.getElementById("btn-history").classList.remove("bg-indigo-400")
+    document.getElementById("btn-donation").classList.add("bg-indigo-400")
 }
 function toogle_donation(){
     document.getElementById("history").classList.add("hidden")
     document.getElementById("donation").classList.remove("hidden")
-    document.getElementById("btn-history").classList.add("bg-indigo-200")
-    document.getElementById("btn-donation").classList.remove("bg-indigo-200")
+    document.getElementById("btn-history").classList.add("bg-indigo-400")
+    document.getElementById("btn-donation").classList.remove("bg-indigo-400")
 }
