@@ -1,3 +1,11 @@
+// if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+//     console.log("yes")
+//     let c_mode = "bg-indigo-50"
+// } else {
+//       console.log("no")
+//     let c_mode = "bg-indigo-400"
+//   }
+
 // global coin
 let coin = 10000;
 let donations = [0,0,0]
@@ -37,23 +45,31 @@ function dono(d_id){
     const date = new Date()
     const section = document.getElementById("history")
     section.innerHTML += `
-    <div class="shadow-xl w-3/4 mx-auto p-4 mb-2">
+    <div class="shadow-xl w-3/4 mx-auto p-4 m-4">
                 <h2>${money} Taka is Donated for ${card_text[d_id-1]}, Bangladesh</h2>
                 <p>${date}</p>
             </div>
     `
     
 }
-
+if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+    console.log("yes")
+    let c_mode = "bg-indigo-50"
+} else {
+      console.log("no")
+    let c_mode = "bg-indigo-400"
+  }
+let c_mode = "bg-indigo-400"
 function toogle_history(){
     document.getElementById("donation").classList.add("hidden")
     document.getElementById("history").classList.remove("hidden")
-    document.getElementById("btn-history").classList.remove("bg-indigo-400")
-    document.getElementById("btn-donation").classList.add("bg-indigo-400")
+    document.getElementById("btn-history").classList.remove(c_mode)
+    document.getElementById("btn-donation").classList.add(c_mode)
 }
 function toogle_donation(){
     document.getElementById("history").classList.add("hidden")
     document.getElementById("donation").classList.remove("hidden")
-    document.getElementById("btn-history").classList.add("bg-indigo-400")
-    document.getElementById("btn-donation").classList.remove("bg-indigo-400")
+    document.getElementById("btn-history").classList.add(c_mode)
+    document.getElementById("btn-donation").classList.remove(c_mode)
 }
+
